@@ -1,0 +1,10 @@
+[package]
+name = "lipsum-cli"
+version = "0.1.0"
+edition = "2021"
+authors = ["Civan Yavuzsen <civanyavuzsen@gmail.com>"]
+
+[dependencies]
+atty = "0.2"
+clap = { version = "3.1.0", features = ["derive"] }
+lipsum = "0.8"

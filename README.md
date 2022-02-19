@@ -1,4 +1,5 @@
 # lipsum-cli
+version: 0.1.0
 
 lipsum-cli is a small terminal application written in Rust language. It's used for generating pseudo-Latin lorem ipsum filler text in terminal.
 
@@ -62,3 +63,11 @@ This will generate a string of 10 words using the lorem ipsum example filler tex
     
     $ lipsum-cli lorem-ipsum --words 10
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+
+## Release History
+
+This is a changelog describing the most important changes per release.
+
+### Version 0.1.0 — Feb 5th, 2022
+
+- Initial release

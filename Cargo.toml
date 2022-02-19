@@ -10,3 +10,6 @@ license = "MIT OR Apache-2.0"
 atty = "0.2"
 clap = { version = "3.1.0", features = ["derive"] }
 lipsum = "0.8"
+
+[dev-dependencies]
+version-sync = "0.9"

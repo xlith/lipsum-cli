@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Civan Yavuzsen <civanyavuzsen@gmail.com>"]
 description = "Terminal application for generating lipsum text"
-license = "MIT OR Apache-2.0"
+license = "MIT"
 
 [dependencies]
 atty = "0.2"

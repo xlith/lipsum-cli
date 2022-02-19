@@ -64,6 +64,10 @@ This will generate a string of 10 words using the lorem ipsum example filler tex
     $ lipsum-cli lorem-ipsum --words 10
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
 
+## LICENSE
+    
+This project is licensed under the MIT license.
+
 ## Release History
 
 This is a changelog describing the most important changes per release.

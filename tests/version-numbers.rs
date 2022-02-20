@@ -12,6 +12,6 @@ fn test_html_root_url() {
 fn test_readme_changelog() {
     version_sync::assert_contains_regex!(
         "README.md",
-        r"^### Version {version} — .* \d\d?.., 20\d\d$"
+        r"^### Version {version} — \d{2}\.\d{2}\.\d{4}$"
     );
 }

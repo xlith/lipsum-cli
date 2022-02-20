@@ -1,9 +1,13 @@
 [package]
 name = "lipsum-cli"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Civan Yavuzsen <civanyavuzsen@gmail.com>"]
-description = "Terminal application for generating lipsum text"
+description = """
+Terminal application for generating lipsum text.
+Default usage will generate a string like `Grate Meminit et Praesentibus` using `Liber Primus`
+which should be suitable for use in a document title.
+"""
 license = "MIT"
 
 [dependencies]

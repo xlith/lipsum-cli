@@ -24,6 +24,8 @@ brew install lipsum-cli
 ## USAGE
 
 ```
+lipsum-cli [OPTIONS]
+
 OPTIONS:
     -f, --file <FILE>                  File input for the custom source. This has priority to stdin.
                                        If not specified, stdin is used

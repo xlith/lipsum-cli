@@ -10,8 +10,15 @@ It also has the ability to generate text from a file or stdin.
 
 ## INSTALLATION
 
+### Using Cargo
 ```shell
 cargo install lipsum-cli
+```
+
+### Using Homebrew
+```shell
+brew tap xlith/lipsum-cli
+brew install lipsum-cli
 ```
 
 ## USAGE

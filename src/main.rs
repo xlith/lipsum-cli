@@ -1,5 +1,6 @@
 extern crate core;
 
+use std::process::{exit, ExitCode};
 use atty::Stream;
 use clap::{ArgEnum, Parser};
 
@@ -14,7 +15,6 @@ mod utils;
 /// which should be suitable for use in a document title.
 #[clap(author, version)]
 struct Args {
-
     /// Text source to choose from. Ignored if stdin or `-f` is used.
     #[clap(short, long, arg_enum, default_value = "liber-primus")]
     text_source: TextSource,
@@ -34,52 +34,43 @@ enum TextSource {
     LoremIpsum,
 }
 
-enum Input {
-    Stdin,
-    File,
-    LiberPrimus,
-    LoremIpsum,
-}
-
-fn main() {
+fn main() -> ExitCode {
     let args = Args::parse();
 
-    let input_source: Input;
     let file = args.file.unwrap_or("".to_string());
     let source = args.text_source;
+    let input;
+    let words;
 
     if file != "" {
-        input_source = Input::File;
-    } else if atty::isnt(Stream::Stdin) {
-        input_source = Input::Stdin;
-    } else if source == TextSource::LoremIpsum {
-        input_source = Input::LoremIpsum;
-    } else if source == TextSource::LiberPrimus {
-        input_source = Input::LiberPrimus;
-    } else {
-        panic!("Invalid source");
+        words = 5;
+        input = utils::read_from_file(&file);
+        println!("{}", custom::run(&*input, words));
+        exit(0);
     }
 
-    let words = args.words.unwrap_or_else(|| {
-        if matches!(input_source, Input::LiberPrimus) { 0 } else { 5 }
-    });
-
-    match input_source {
-        Input::Stdin => {
-            let input = utils::read_from_stdin();
+    if atty::isnt(Stream::Stdin) {
+        input = utils::read_from_stdin();
+        if input.chars().count() > 0 {
+            words = 5;
             println!("{}", custom::run(&*input, words));
-        }
-        Input::File => {
-            let input = utils::read_from_file(&file);
-            println!("{}", custom::run(&*input, words));
-        }
-        Input::LoremIpsum => {
-            println!("{}", lorem_ipsum::run(words));
-        }
-        Input::LiberPrimus => {
-            println!("{}", liber_primus::run(words));
+            exit(0);
         }
     }
+
+    if source == TextSource::LoremIpsum {
+        words = 5;
+        println!("{}", lorem_ipsum::run(words));
+        exit(0);
+    }
+
+    if source == TextSource::LiberPrimus {
+        words = 0;
+        println!("{}", liber_primus::run(words));
+        exit(0);
+    }
+
+    panic!("Invalid source");
 }
 
 #[test]

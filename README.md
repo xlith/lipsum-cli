@@ -93,6 +93,12 @@ This project is licensed under the [MIT license](LICENSE). Contributions will be
 
 This is a changelog describing the most important changes per release.
 
+### Version 0.2.0 — 30.09.2022
+
+- Refactor code for better readability
+- Fix bug when stdin input length is 0
+- Update dependencies
+
 ### Version 0.2.0 — 19.02.2022
 
 - Completely rewritten and redesigned the application to be more modular and easier to use.

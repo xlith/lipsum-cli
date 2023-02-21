@@ -49,9 +49,16 @@ fn main() -> ExitCode {
 
     if atty::isnt(Stream::Stdin) {
         input = utils::read_from_stdin();
-        if input.chars().count() > 0 {
+        // Needs a minumum of 3 words to produce output
+        if input.split_whitespace().count() >= 3 {
             println!("{}", custom::run(&input, words));
             exit(0);
+        } else {
+            eprintln!(
+                "Error: not enough words received from stdin, needs a minimum of \
+              three whitespace-seperated words"
+            );
+            exit(1);
         }
     }
 

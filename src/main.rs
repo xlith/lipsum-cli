@@ -1,12 +1,12 @@
 extern crate core;
 
-use std::process::{exit, ExitCode};
 use atty::Stream;
 use clap::{ArgEnum, Parser};
+use std::process::{exit, ExitCode};
 
+mod custom;
 mod liber_primus;
 mod lorem_ipsum;
-mod custom;
 mod utils;
 
 #[derive(Parser)]
@@ -37,40 +37,37 @@ enum TextSource {
 fn main() -> ExitCode {
     let args = Args::parse();
 
-    let file = args.file.unwrap_or("".to_string());
+    let words = args.words.unwrap_or(5);
     let source = args.text_source;
     let input;
-    let words;
 
-    if file != "" {
-        words = 5;
+    if let Some(file) = args.file {
         input = utils::read_from_file(&file);
-        println!("{}", custom::run(&*input, words));
+        println!("{}", custom::run(&input, words));
         exit(0);
     }
 
     if atty::isnt(Stream::Stdin) {
         input = utils::read_from_stdin();
-        if input.chars().count() > 0 {
-            words = 5;
-            println!("{}", custom::run(&*input, words));
+        // Needs a minumum of 3 words to produce output
+        if input.split_whitespace().count() >= 3 {
+            println!("{}", custom::run(&input, words));
             exit(0);
+        } else {
+            eprintln!(
+                "Error: not enough words received from stdin, needs a minimum of \
+              three whitespace-seperated words"
+            );
+            exit(1);
         }
     }
 
-    if source == TextSource::LoremIpsum {
-        words = 5;
-        println!("{}", lorem_ipsum::run(words));
-        exit(0);
+    match source {
+        TextSource::LoremIpsum => println!("{}", lorem_ipsum::run(words)),
+        TextSource::LiberPrimus => println!("{}", liber_primus::run(words)),
     }
 
-    if source == TextSource::LiberPrimus {
-        words = 0;
-        println!("{}", liber_primus::run(words));
-        exit(0);
-    }
-
-    panic!("Invalid source");
+    exit(0);
 }
 
 #[test]

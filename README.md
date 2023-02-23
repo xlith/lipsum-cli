@@ -93,6 +93,11 @@ This project is licensed under the [MIT license](LICENSE). Contributions will be
 
 This is a changelog describing the most important changes per release.
 
+### Version 0.2.1 — 21.02.2023
+
+- Small refactor for more idiomatic Rust
+- Fix bug in which `--words` input was overridden
+
 ### Version 0.2.0 — 30.09.2022
 
 - Refactor code for better readability

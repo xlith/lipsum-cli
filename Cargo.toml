@@ -9,6 +9,23 @@ Default usage will generate a string like `Grate Meminit et Praesentibus` using 
 which should be suitable for use in a document title.
 """
 license = "MIT"
+categories = ["command-line-interface"]
+keywords = [
+    "cli",
+    "cli-app",
+    "lorem-ipsum",
+    "lorem",
+    "terminal-app",
+    "random-text",
+    "lipsum",
+    "lipsum-cli",
+    "lipsum-generator",
+    "lorem-ipsum-generator",
+]
+repository = "https://github.com/xlith/lipsum-cli"
+homepage = "https://github.com/xlith/lipsum-cli"
+documentation = "https://docs.rs/crate/lipsum-cli/latest"
+exclude = ["/tests", "/.github"]
 
 [dependencies]
 atty = "0.2"

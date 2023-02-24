@@ -1,5 +1,9 @@
 # lipsum-cli
 
+![](https://img.shields.io/crates/v/lipsum-cli?style=flat-square)
+![](https://img.shields.io/github/actions/workflow/status/xlith/lipsum-cli/ci.yml?branch=master&style=flat-square)
+![](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+
 lipsum-cli is a small terminal application written in Rust language. It's used for generating pseudo-Latin lorem ipsum filler text in terminal.
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat…
@@ -92,6 +96,12 @@ This project is licensed under the [MIT license](LICENSE). Contributions will be
 ## Release History
 
 This is a changelog describing the most important changes per release.
+
+
+### Version 0.2.2 — 24.02.2023
+
+- update dependencies
+- update creates.io metadata and readme
 
 ### Version 0.2.1 — 21.02.2023
 

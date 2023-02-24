@@ -1,8 +1,8 @@
 extern crate core;
 
 use atty::Stream;
-use clap::{ArgEnum, Parser};
-use std::process::{exit, ExitCode};
+use clap::{Parser, ValueEnum};
+use std::process::{exit};
 
 mod custom;
 mod liber_primus;
@@ -13,28 +13,28 @@ mod utils;
 /// Terminal application for generating lipsum text.
 /// Default usage will generate a string like `Grate Meminit et Praesentibus` using `Liber Primus`
 /// which should be suitable for use in a document title.
-#[clap(author, version)]
+#[command(author, version, about, long_about = None)]
 struct Args {
     /// Text source to choose from. Ignored if stdin or `-f` is used.
-    #[clap(short, long, arg_enum, default_value = "liber-primus")]
+    #[arg(short, long, value_enum, default_value = "liber-primus")]
     text_source: TextSource,
 
     /// File input for the custom source. This has priority to stdin. If not specified, stdin is used.
-    #[clap(short, long)]
+    #[arg(short, long)]
     file: Option<String>,
 
     /// Count of words to generate. Default is 5 if text source is not liber-primus.
-    #[clap(short, long)]
+    #[arg(short, long)]
     words: Option<usize>,
 }
 
-#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, ArgEnum)]
+#[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, ValueEnum)]
 enum TextSource {
     LiberPrimus,
     LoremIpsum,
 }
 
-fn main() -> ExitCode {
+fn main()  {
     let args = Args::parse();
 
     let words = args.words.unwrap_or(5);

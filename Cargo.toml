@@ -12,15 +12,10 @@ license = "MIT"
 categories = ["command-line-interface"]
 keywords = [
     "cli",
-    "cli-app",
     "lorem-ipsum",
     "lorem",
-    "terminal-app",
-    "random-text",
+    "random",
     "lipsum",
-    "lipsum-cli",
-    "lipsum-generator",
-    "lorem-ipsum-generator",
 ]
 repository = "https://github.com/xlith/lipsum-cli"
 homepage = "https://github.com/xlith/lipsum-cli"

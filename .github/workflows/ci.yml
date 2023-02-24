@@ -39,6 +39,6 @@ jobs:
       - name: Upgrade Brew Tap
         uses: chyroc/upgrade-brew-tap@v0.24.0
         with:
-          name: "<tap-name>"
+          name: "lipsum-cli"
           tap_repo: "xlith/homebrew-lorem-ipsum"
           token: ${{ secrets.TAP_TOKEN }}

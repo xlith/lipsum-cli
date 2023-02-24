@@ -1,7 +1,6 @@
 # lipsum-cli
 
 ![](https://img.shields.io/crates/v/lipsum-cli?style=flat-square)
-![](https://img.shields.io/github/actions/workflow/status/xlith/lipsum-cli/ci.yml?branch=master&style=flat-square)
 ![](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 lipsum-cli is a small terminal application written in Rust language. It's used for generating pseudo-Latin lorem ipsum filler text in terminal.

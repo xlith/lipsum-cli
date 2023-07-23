@@ -39,6 +39,9 @@ OPTIONS:
     -V, --version                      Print version information
     -w, --words <WORDS>                Count of words to generate. Default is 5 if text source is
                                        not liber-primus
+    -l, --words-per-line               Count of words after a new line is inserted. By default deactivated
+                                       Zero is the same as deactivated
+                                       No new line will come after the last word
 
 ```
 
@@ -73,8 +76,20 @@ This will generate a string of 10 words from stdin
 
 This will generate a string of 10 words using the lorem ipsum example filler text beginning with “Lorem ipsum dolor sit amet”
     
-    $ lipsum-cli lorem-ipsum --words 10
+    $ lipsum-cli --text-source lorem-ipsum --words 10
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+
+This will generate a string of 20 words with a new line after 4th word.
+
+    $ lipsum-cli --words 30 --words-per-line 4
+    Multavit. -- Si sine
+    causa, nollem me ab
+    eo dissentiunt, sed certe
+    non probes, eum quem
+    ego arbitror unum vidisse
+    verum maximisque erroribus animos
+    hominum liberavisse et omnia
+    tradidisse, quae.
 
 ## CONTRIBUTING
     
@@ -95,7 +110,6 @@ This project is licensed under the [MIT license](LICENSE). Contributions will be
 ## Release History
 
 This is a changelog describing the most important changes per release.
-
 
 ### Version 0.2.2 — 24.02.2023
 

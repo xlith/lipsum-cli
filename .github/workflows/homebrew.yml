@@ -54,7 +54,7 @@ jobs:
   
             # Allows you to add a custom require_relative at the top of the formula template.
             # Optional - string
-            custom_require: 
+            custom_require: ''
   
             # Adds URL and checksum targets for different OS and architecture pairs. Using this option assumes 
             # a tar archive exists on your GitHub repo with the following URL pattern (this cannot be customized):

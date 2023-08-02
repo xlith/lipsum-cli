@@ -111,6 +111,11 @@ This project is licensed under the [MIT license](LICENSE). Contributions will be
 
 This is a changelog describing the most important changes per release.
 
+### Version 0.3.0 — 02.03.2023
+
+- Add a new option (words-per-line)
+- Fix readme typo
+
 ### Version 0.2.2 — 24.02.2023
 
 - update dependencies

@@ -50,7 +50,7 @@ jobs:
             # to implement the strategy and add it to your tap repository.
             # Example: https://docs.brew.sh/Formula-Cookbook#specifying-the-download-strategy-explicitly
             # Optional - string
-            download_strategy: CurlDownloadStrategy
+            download_strategy: ''
   
             # Allows you to add a custom require_relative at the top of the formula template.
             # Optional - string
@@ -62,9 +62,9 @@ jobs:
             # Darwin AMD pre-existing path example: https://github.com/justintime50/myrepo/releases/download/v1.2.0/myrepo-1.2.0-darwin-amd64.tar.gz
             # Linux ARM pre-existing path example: https://github.com/justintime50/myrepo/releases/download/v1.2.0/myrepo-1.2.0-linux-arm64.tar.gz
             # Optional - booleans
-            target_darwin_amd64: true
+            target_darwin_amd64: false
             target_darwin_arm64: false
-            target_linux_amd64: true
+            target_linux_amd64: false
             target_linux_arm64: false
   
             # Update your homebrew tap's README with a table of all projects in the tap.

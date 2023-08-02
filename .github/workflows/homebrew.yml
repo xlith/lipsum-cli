@@ -1,5 +1,7 @@
 # .github/workflows/release.yml
 # Start Homebrew Releaser when a new GitHub release is created
+name: Homebrew Releaser
+
 on:
     release:
       types: [published]

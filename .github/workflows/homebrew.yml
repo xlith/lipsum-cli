@@ -87,8 +87,8 @@ jobs:
   
             # Skips committing the generated formula to a homebrew tap (useful for local testing).
             # Default is shown - boolean
-            skip_commit: true
+            skip_commit: false
   
             # Logs debugging info to console.
             # Default is shown - boolean
-            debug: true
+            debug: false
